@@ -1,5 +1,5 @@
 {
-  "name": "lscloud-bones-base-theme",
+  "name": "lscloud-bones-theme",
   "version": "0.0.1",
   "description": "A base theme for LemonStand 2",
   "main": "theme.yaml",
@@ -17,13 +17,17 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2",
-    "gulp-jshint": "^1.10.0",
+  "devDependencies": {},
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.1",
-    "gulp-uglify": "^1.2.0"
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.0",
+    "lodash": "^3.10.1",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2"
   }
 }
