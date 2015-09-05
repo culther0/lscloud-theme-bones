@@ -1,0 +1,32 @@
+
+<section>
+
+  {% if shop %}
+
+  {% for product in products %}
+      <p>{{ product.name }}</p>
+      <ul><li>{% for image in product.images %}
+          <img src="{{ image.thumbnail(367, 367) }}"/>
+          {% endfor %}
+      {{ product.price|currency }}</li></ul>
+    {% endfor %}
+
+  {% endif %}
+  
+  {% if collection %}
+
+  {% set featuredCollection = 'coolcameras'|collection %}
+    {% for product in featuredCollection.products %}
+      <p>{{ product.name }}</p>
+      <ul><li>{% for image in product.images %}
+          <img src="{{ image.thumbnail(367, 367) }}"/>
+          {% endfor %}
+      {{ product.price|currency }}</li></ul>
+    {% endfor %}
+     
+  {% else %}
+    <p>The product collection {{ collectionCode }} not found. Please create this group on the Shop/Collections page.</p>
+  {% endif %}
+
+
+</section>
