@@ -6,7 +6,7 @@
   {% for product in products %}
       <p>{{ product.name }}</p>
       <ul><li>{% for image in product.images %}
-          <img src="{{ image.thumbnail(367, 367) }}"/>
+          <a href="{{ site_url('/product') }}/{{ product.url_name }}"><img src="{{ image.thumbnail(367, 367) }}"/></a>
           {% endfor %}
       {{ product.price|currency }}</li></ul>
     {% endfor %}
@@ -19,7 +19,7 @@
     {% for product in featuredCollection.products %}
       <p>{{ product.name }}</p>
       <ul><li>{% for image in product.images %}
-          <img src="{{ image.thumbnail(367, 367) }}"/>
+          <a href="{{ site_url('/product') }}/{{ product.url_name }}"><img src="{{ image.thumbnail(367, 367) }}"/></a>
           {% endfor %}
       {{ product.price|currency }}</li></ul>
     {% endfor %}

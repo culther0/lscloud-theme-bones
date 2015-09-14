@@ -1,20 +1,23 @@
 ---
 action: 'shop:customerProfile'
-template: default
+template: inner
 protocol: all
 published: true
 name: Profile
 url: /profile
 ---
+<div class="row">
+  <div class="content twelve columns">
+    {% if customer %}
+      <section id="profile-addresses">
+      {{ partial('shop-customerprofile') }}
+      </section>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			{% if customer %}
-				{{ partial('shop-customerprofile') }}
-			{% else %}
-				<h1>Please Login to edit your profile</h1>
-			{% endif %}
-		</div>
-	</div>
+      <div class="row" id="profile-changepassword">
+        {{ partial('shop-changepassword') }}
+      </div>
+    {% else %}
+      Please <a href="{{ root_url('login') }}">login</a> to edit your profile.
+    {% endif %}
+  </div>
 </div>

@@ -1,22 +1,38 @@
 ---
 action: 'shop:products'
-template: default
+template: home
 protocol: all
 published: true
-name: Bones
+name: Home
 url: /
 ---
-
-<div class="hero">
-	
-	<figure>
-	  	<img src="http://placehold.it/350x150"  alt="">
-	 <figcaption>Hero Image</figcaption>
-	</figure>
+<div class="row">
+  <div class="content twelve columns">
+    <div class="row">
+      <div class="twelve columns banner">
+        <div class="right banner-contents">
+            <h1>{{ theme.bannerTitleText }}</h1>
+            <h4>{{ theme.bannerSentenceText }}</h4>
+            <a class="button right" href="{{ site_url('shop') }}">Shop Now</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row product-list">
+      {{ partial("home-product-list") }}
+      {{ partial("current-date") }}
+    </div>
+  
+    <div class="row">
+        <div class="four columns">
+            {{ content_block('home-left') }}
+        </div>
+        <div class="four columns">
+            {{ content_block('home-center') }}
+        </div>
+        <div class="four columns">
+            {{ content_block('home-right') }}
+        </div>
+    </div>
+  </div>
 </div>
-
-
-<div class="feature-products">
-	{{ partial("partial-product-grid", {'collection': true }) }}
-</div>
-

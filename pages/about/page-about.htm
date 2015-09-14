@@ -1,32 +1,12 @@
 ---
-description: 'The About Page'
-template: default
+template: inner
 protocol: all
 published: true
 name: About
 url: /about
 ---
-
-
-<div class="container-fluid about-head">
-	<div class="container">
-		<div class="row">
-			<h1>About Bones</h1>
-		</div>
-	</div>
-</div>
-
-<div class="container about-text">
-	<div class="row">
-		<div class="col-md-9">
-			{{ content_block('about-text') }}
-		</div>
-		<div class="col-md-3">
-			<div class="col-md-12">
-				<img src="{{ 'images/dpark.jpg'|theme_resource }}" alt="">
-				<h3>Daniel Park</h3>
-				<p>Co-founder/Product Manager</p>
-			</div>
-		</div>
-	</div>
+<div class="row">
+  <div class="content twelve columns">
+    {{ content_block('about-page') }}
+  </div>
 </div>

@@ -1,18 +1,19 @@
 ---
 action: 'shop:products'
-template: default
+template: inner
 protocol: all
 published: true
-name: Bones
-url: /shop
+name: Shop
+url: '/shop/:page?'
 ---
-
-
-
-<section>
-  
-  
-  {{ partial("partial-product-grid", {'shop': true }) }}
-     
-</section>
-
+<div class="row">
+  <div class="content twelve columns">
+    <div class="row product-list clearfix">
+      {{ 
+        partial('shop-product-list', {
+          'products': products
+        })
+      }}
+    </div>
+  </div>
+</div>
