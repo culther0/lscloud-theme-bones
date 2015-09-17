@@ -1,0 +1,17 @@
+---
+action: 'shop:products'
+template: test-template
+protocol: all
+published: true
+name: customer-reviews
+url: /customer-reviews
+---
+<h1>Customer Reviews</h1>
+
+<div class="reviews">
+    <a id="reviews"></a>
+    {% for review in product.reviews() %}
+        {{ partial('shop-product-review', {'review': review, 'product': product } ) }}
+    {% endfor %}
+    {{ partial('shop-product-review-form', {'product': product, 'customer': customer } ) }}
+</div>
